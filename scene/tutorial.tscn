@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://x7emdvhdlyii"]
+
+[ext_resource type="Script" uid="uid://dtkuln7djf1u6" path="res://scene/tutorial.gd" id="1_p31a4"]
+
+[node name="Tutorial" type="Node2D"]
+position = Vector2(142, 90)
+script = ExtResource("1_p31a4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -142.0
+offset_top = -91.0
+offset_right = 158.0
+offset_bottom = 110.0
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Tutorial"
+
+[node name="CreditsButton" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+action_mode = 0
+text = "back"
+
+[node name="Label2" type="Label" parent="ColorRect"]
+self_modulate = Color(1, 0.00392157, 1, 1)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "🎮 Controles
+← / → : Mover
+
+↑ : Pular
+
+F : Trocar de mundo"
+
+[connection signal="pressed" from="ColorRect/CreditsButton" to="." method="_on_credits_button_pressed"]
